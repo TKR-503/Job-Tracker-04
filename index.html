@@ -17,7 +17,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Job Application</title>
 </head>
-  
+
 <body class="bg-gray-100">
   <div class="max-w-6xl mx-auto p-8 ">
 
@@ -36,46 +36,47 @@
         <h2 class="text-gray-500">Interview</h2>
         <p id="interviewCount" class="text-3xl font-bold text-green-600">0</p>
       </div>
-  
+
       <div class="bg-white shadow rounded p-5 ">
         <h2 class="text-gray-500">Rejected</h2>
         <p id="rejectedCount" class="text-3xl font-bold text-red-600">0</p>
+      </div>
     </div>
-</div>
 
- <!-- JOB SECTION -->
+    <!-- JOB SECTION -->
 
-<div class="flex justify-between mb-6">
-            <h2 class="text-xl font-bold text-gray-800">Available Jobs</h2>
-            <p class="text-gray-500">Total: <span id="sectionCount">8</span></p>
-  </div>
-
-
-<!-- TABS -->
-
-<div class="flex gap-3 mb-6">
-            <button onclick="showTab('all')" id="tabAll"
-                class="tabBtn px-4 py-2 rounded bg-blue-500 text-white font-medium">All</button>
-
-              <button onclick="showTab('interview')" id="tabInterview"
-                class="tabBtn px-4 py-2 rounded bg-gray-200 text-gray-700 font-medium">Interview</button>
-
-            <button onclick="showTab('rejected')" id="tabRejected"
-                class="tabBtn px-4 py-2 rounded bg-gray-200 text-gray-700 font-medium">Rejected</button>
+    <div class="flex justify-between mb-6">
+      <h2 class="text-xl font-bold text-gray-800">Available Jobs</h2>
+      <p class="text-gray-700">Total: <span id="sectionCount">8</span></p>
+    </div>
 
 
-</div>
+    <!-- TABS -->
+    <div class="flex gap-3 mb-6">
+
+      <button class="tabBtn px-4 py-2 rounded bg-gray-200 text-gray-700 font-medium hover:bg-blue-500  hover:text-white transitio ">
+          All
+      </button>
+
+      <button class="tabBtn px-4 py-2 rounded bg-gray-200 text-gray-700 font-medium hover:bg-blue-500 hover:text-white transition">
+            Interview
+      </button>
+
+      <button class="tabBtn px-4 py-2 rounded bg-gray-200 text-gray-700 font-medium hover:bg-blue-500 hover:text-white transition">
+            Rejected
+      </button>
+
+    </div>
+
+    <!-- JOB LIST -->
+
+    <div id="jobContainer" class="grid md:grid-cols-1 gap-6">
+
+    </div>
 
 
-
-
-
-
-
-
-
-<script src="./script.js/object_array.js"></script>
-<script src="./script.js/machine.js"></script>
+     <script src="./script.js/object_array.js"></script>
+    <script src="./script.js/machine.js"></script>
 
   </div>
 </body>
