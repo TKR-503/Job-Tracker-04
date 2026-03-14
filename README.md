@@ -27,10 +27,23 @@ Ans : There are 3 main steps to create and insert a new element into the DOM and
 
 3. What is Event Bubbling? How does it work?
 
-Ans : 
+Ans : Event Bubbling means when an event happens on a child element but the event moves up to its 
+        parent elements. Suppose there are add 2 event listeners for 2 buttons like parent and 
+        child when click the child button than parent event is activate and that is called 
+        the Event Bubbling .
+
+4. What is Event Delegation in JavaScript? Why is it useful?
+
+Ans : Event Delegation means when we add any event listener to a parent element to handling events for its 
+         child elements. This Event Delegation is useful for saves memory and reduces multiple event listeners .
 
 
+5. What is the difference between preventDefault() and stopPropagation()?
 
+Ans : Here preventDefault() function is use for to stops the default browser behavior and 
+       
+       stopPropagation() function is use for to stops the Event Bubbling from child element to its parent 
+        elements .
 
 
 
