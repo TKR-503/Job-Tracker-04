@@ -21,7 +21,7 @@ function setRejected(id) {
 }
 
 function deleteJob(id) {
-    const index = jobs.findIndex(function(j) { 
+    const job = jobs.find(function(j) { 
         return j.id === id; 
     });
      if (currentTab === "all") {
@@ -34,16 +34,17 @@ function deleteJob(id) {
     } else {
          job.status = "all";
 }
+    renderJobs();
 }
 
 function updateCounts() {
 
-   const interview = jobs.filter(function(job) {
-         return job.status === "interview";
+   const interview = jobs.filter(function(j) {
+         return j.status === "interview";
     }).length;
     
-    const rejected = jobs.filter(function(job) {
-        return job.status === "rejected";
+    const rejected = jobs.filter(function(j) {
+        return j.status === "rejected";
     }).length;
 
    document.getElementById("interviewCount").innerText = interview;
@@ -56,8 +57,31 @@ function updateCounts() {
 
 }
 
+function updateTabStyles() {
 
+  const tabs = [
+    { id: "tabAll", tab: "all" },
+    { id: "tabInterview", tab: "interview" },
+    { id: "tabRejected", tab: "rejected" }
+];
 
+   tabs.forEach(function(t) {
 
-  renderJobs();
+    const btn = document.getElementById(t.id);
+
+    if (currentTab === t.tab) {
+       
+        btn.className = "tabBtn px-4 py-2 rounded font-medium transition bg-blue-500 text-white";
+    } 
+    
+    else {
+       
+         btn.className = "tabBtn px-4 py-2 rounded font-medium transition bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white";
+    }
+   
+});
+
+} 
+
+renderJobs();
 

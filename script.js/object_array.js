@@ -93,7 +93,9 @@ function renderJobs() {
     if (currentTab === "all") {
         filtered = jobs;
     } else {
-        filtered = jobs.filter(job => job.status === currentTab);
+        filtered = jobs.filter(function(job) {
+            return job.status === currentTab;
+        });
     }
 
     if (filtered.length === 0) {
@@ -107,7 +109,7 @@ function renderJobs() {
         return;
     }
 
-    filtered.forEach(job => {
+    filtered.forEach(function(job) {
 
         const card = document.createElement("div");
         card.className = "bg-white shadow rounded p-6 hover:shadow-lg transition relative";
@@ -144,8 +146,9 @@ function renderJobs() {
   <!-- COMPANY + LOCATION -->
 
   <p class="text-gray-800 mt-1">${job.company} • ${job.location}</p> <br>
-
 </div>
+
+
 
 <p class="text-sm mt-2 text-gray-800">${job.type} | ${job.salary}</p> 
 
@@ -163,12 +166,32 @@ Reject
 
 </div>
 `;
+  container.appendChild(card);
 
-    container.appendChild(card);
 
-       
+  // Event Listeners for buttons
+
+   card.querySelector(".interviewBtn").addEventListener("click", function() {
+            setInterview(job.id);
+             updateCounts();
+             updateTabStyles();
+        });
+
+        card.querySelector(".rejectBtn").addEventListener("click", function() {
+            setRejected(job.id);
+             updateCounts();
+             updateTabStyles();
+        });
+
+        card.querySelector(".deleteBtn").addEventListener("click", function() {
+            deleteJob(job.id);
+            updateCounts();
+            updateTabStyles();
+        });
 
     });
 
+  
+    updateTabStyles();
   
 }
