@@ -135,28 +135,29 @@ function renderJobs() {
 
        <!-- JOB POSITION -->
   
-       <h3 class="text-xl font-bold text-gray-800">${job.position}</h3>
+       <h3 class="text-xl font-bold text-gray-800">${job.position}</h3> <br>
 
   <!-- STATUS BADGE BELOW POSITION -->
   
   ${statusBadge}
 
   <!-- COMPANY + LOCATION -->
-  <p class="text-gray-500 mt-1">${job.company} • ${job.location}</p>
+  
+  <p class="text-gray-800 mt-1">${job.company} • ${job.location}</p> <br>
 
 </div>
 
-<p class="text-sm mt-2 text-gray-600">${job.type} | ${job.salary}</p>
+<p class="text-sm mt-2 text-gray-800">${job.type} | ${job.salary}</p> 
 
-<p class="mt-3 text-gray-600">${job.description}</p>
+<p class="mt-3 text-gray-800">${job.description}</p> 
 
 <div class="flex gap-2 mt-4">
 
-<button class="interviewBtn border border-green-500 text-green-600 px-3 py-1 rounded hover:bg-green-50">
+<button class="interviewBtn border border-green-500 text-green-700 px-3 py-1 rounded hover:bg-green-50">
 Interview
 </button>
 
-<button class="rejectBtn border border-red-500 text-red-600 px-3 py-1 rounded hover:bg-red-50">
+<button class="rejectBtn border border-red-500 text-red-700 px-3 py-1 rounded hover:bg-red-50">
 Reject
 </button>
 
