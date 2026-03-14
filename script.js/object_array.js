@@ -148,8 +148,6 @@ function renderJobs() {
   <p class="text-gray-800 mt-1">${job.company} • ${job.location}</p> <br>
 </div>
 
-
-
 <p class="text-sm mt-2 text-gray-800">${job.type} | ${job.salary}</p> 
 
 <p class="mt-3 text-gray-800">${job.description}</p> 
@@ -174,19 +172,18 @@ Reject
    card.querySelector(".interviewBtn").addEventListener("click", function() {
             setInterview(job.id);
              updateCounts();
-             updateTabStyles();
         });
 
         card.querySelector(".rejectBtn").addEventListener("click", function() {
             setRejected(job.id);
              updateCounts();
-             updateTabStyles();
+    
         });
 
         card.querySelector(".deleteBtn").addEventListener("click", function() {
             deleteJob(job.id);
             updateCounts();
-            updateTabStyles();
+            
         });
 
     });

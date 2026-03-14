@@ -2,6 +2,7 @@
 function showTab(tab) {
     currentTab = tab;
     renderJobs();
+     updateTabStyles();
 }
 
 function setInterview(id) {
@@ -57,31 +58,36 @@ function updateCounts() {
 
 }
 
-function updateTabStyles() {
+function updateTabStyles(){
 
-  const tabs = [
-    { id: "tabAll", tab: "all" },
-    { id: "tabInterview", tab: "interview" },
-    { id: "tabRejected", tab: "rejected" }
-];
+  const tabAll = document.getElementById("tabAll");
+  const tabInterview = document.getElementById("tabInterview");
+  const tabRejected = document.getElementById("tabRejected");
 
-   tabs.forEach(function(t) {
+  // Reset style
 
-    const btn = document.getElementById(t.id);
+  tabAll.className = "tabBtn px-4 py-2 rounded bg-gray-200 text-gray-700  transition";
 
-    if (currentTab === t.tab) {
-       
-        btn.className = "tabBtn px-4 py-2 rounded font-medium transition bg-blue-500 text-white";
-    } 
-    
-    else {
-       
-         btn.className = "tabBtn px-4 py-2 rounded font-medium transition bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white";
-    }
-   
-});
+  tabInterview.className = "tabBtn px-4 py-2 rounded bg-gray-200 text-gray-700 transition";
 
-} 
+  tabRejected.className = "tabBtn px-4 py-2 rounded bg-gray-200 text-gray-700  transition";
+
+  // Apply active style
+
+  if(currentTab === "all"){
+    tabAll.className = "tabBtn px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-500 transition";
+  }
+
+  else if(currentTab === "interview"){
+    tabInterview.className = "tabBtn px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-500 transition";
+  }
+
+  else {
+    tabRejected.className = "tabBtn px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-500 transition";
+  }
+
+}
+
 
 renderJobs();
 
