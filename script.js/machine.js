@@ -33,9 +33,31 @@ function deleteJob(id) {
 
     } else {
          job.status = "all";
+}
+}
 
+function updateCounts() {
+
+   const interview = jobs.filter(function(job) {
+         return job.status === "interview";
+    }).length;
+    
+    const rejected = jobs.filter(function(job) {
+        return job.status === "rejected";
+    }).length;
+
+   document.getElementById("interviewCount").innerText = interview;
+   document.getElementById("rejectedCount").
+   innerText = rejected; 
+
+   document.getElementById("totalCount").innerText = jobs.length;
+   
+   document.getElementById("sectionCount").innerText = jobs.length;
 
 }
+
+
+
 
   renderJobs();
-}
+

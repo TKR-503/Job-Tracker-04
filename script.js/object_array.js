@@ -128,7 +128,7 @@ function renderJobs() {
 
 <!-- DELETE ICON -->
    <button class="deleteBtn absolute top-3 right-3 text-gray-400 hover:text-red-500">
-    🗑
+        <i class="fas fa-trash"></i>
    </button>
 
 <div>
@@ -142,7 +142,7 @@ function renderJobs() {
   ${statusBadge}
 
   <!-- COMPANY + LOCATION -->
-  
+
   <p class="text-gray-800 mt-1">${job.company} • ${job.location}</p> <br>
 
 </div>
